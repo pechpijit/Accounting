@@ -11,8 +11,6 @@ import android.view.inputmethod.InputMethodManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
-
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 
 @SuppressLint("Registered")
@@ -22,30 +20,6 @@ public class BaseActivity extends AppCompatActivity {
     public static String REGIS = "กำลังสมัครสมาชิก...";
     public static String LOAD = "กำลังโหลดข้อมูล...";
     public static String VERIFY = "กำลังตรวจสอบ...";
-
-    public SweetAlertDialog pDialog;
-
-    public void showProgressDialog(String message) {
-
-        if (pDialog == null) {
-            pDialog = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
-            pDialog.getProgressHelper().setBarColor(Color.parseColor("#03a9f4"));
-            pDialog.setContentText("");
-            pDialog.setTitleText(message);
-            pDialog.setCancelable(false);
-            pDialog.setCanceledOnTouchOutside(false);
-            pDialog.show();
-        }
-
-        pDialog.show();
-    }
-
-    public void hideProgressDialog() {
-        if (pDialog != null && pDialog.isShowing()) {
-            pDialog.dismiss();
-            pDialog = null;
-        }
-    }
 
     public void invisibleView(View... views) {
         for (View v : views) {
@@ -67,112 +41,6 @@ public class BaseActivity extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
             throw new RuntimeException("Could not get package name: " + e);
         }
-    }
-
-    public void dialogSuccess(String title, String message) {
-        pDialog.changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
-        pDialog.setTitleText(title);
-        pDialog.setContentText(message);
-        pDialog.setConfirmText("OK");
-        pDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-            @Override
-            public void onClick(SweetAlertDialog sDialog) {
-                BaseActivity.this.hideProgressDialog();
-                BaseActivity.this.setResult(RESULT_OK, null);
-                BaseActivity.this.finish();
-            }
-        });
-        pDialog.show();
-    }
-
-    public void dialogSuccessNotBtn(String title, String message) {
-        pDialog.changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
-        pDialog.setTitleText(title);
-        pDialog.setContentText(message);
-        pDialog.show();
-    }
-
-    public void dialogResultError(String title,String detail) {
-        pDialog = new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE);
-        pDialog.setContentText(title);
-        pDialog.setTitleText(detail);
-        pDialog.setConfirmText("OK");
-        pDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-            @Override
-            public void onClick(SweetAlertDialog sDialog) {
-                BaseActivity.this.hideProgressDialog();
-            }
-        });
-        pDialog.show();
-    }
-
-    public void dialogResultWarning(String title,String detail) {
-        pDialog = new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE);
-        pDialog.setContentText(detail);
-        pDialog.setTitleText(title);
-        pDialog.setCancelable(false);
-        pDialog.setCanceledOnTouchOutside(false);
-        pDialog.setConfirmText("OK");
-        pDialog.setConfirmClickListener(null);
-        pDialog.show();
-    }
-
-    public void dialogAlertWarning(String title, String message) {
-        pDialog.changeAlertType(SweetAlertDialog.WARNING_TYPE);
-        pDialog.setTitleText(title);
-        pDialog.setContentText(message);
-        pDialog.setConfirmText("OK");
-        pDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-            @Override
-            public void onClick(SweetAlertDialog sDialog) {
-                BaseActivity.this.hideProgressDialog();
-            }
-        });
-        pDialog.show();
-    }
-
-    public void dialogAlertError(String title, String message) {
-        pDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
-        pDialog.setTitleText(title);
-        pDialog.setContentText(message);
-        pDialog.setConfirmText("ตกลง");
-        pDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-            @Override
-            public void onClick(SweetAlertDialog sDialog) {
-                BaseActivity.this.hideProgressDialog();
-            }
-        });
-        pDialog.show();
-    }
-
-    public void dialogAlertErrorExit(String title, String message) {
-        pDialog.changeAlertType(SweetAlertDialog.ERROR_TYPE);
-        pDialog.setTitleText(title);
-        pDialog.setContentText(message);
-        pDialog.setConfirmText("OK");
-        pDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-            @Override
-            public void onClick(SweetAlertDialog sDialog) {
-                BaseActivity.this.hideProgressDialog();
-                BaseActivity.this.onBackPressed();
-            }
-        });
-        pDialog.show();
-    }
-
-    public void dialogAlertWarningExit(String title, String message) {
-        pDialog.changeAlertType(SweetAlertDialog.WARNING_TYPE);
-        pDialog.setTitleText(title);
-        pDialog.setContentText(message);
-        pDialog.setConfirmText("OK");
-        pDialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-            @Override
-            public void onClick(SweetAlertDialog sDialog) {
-                BaseActivity.this.hideProgressDialog();
-                BaseActivity.this.onBackPressed();
-            }
-        });
-        pDialog.show();
     }
 
     public void hideKeyboardFrom(View view) {

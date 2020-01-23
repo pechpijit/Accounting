@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import xyz.codecool.android.accounting.helper.BaseActivity;
 
-public class DetailMenu6Activity extends BaseActivity {
+public class DetailMenu5Activity extends BaseActivity {
 
     LinearLayout viewContent;
     TextView txtMenu;
@@ -19,9 +19,10 @@ public class DetailMenu6Activity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStatusBarGradiant(this);
-        setContentView(R.layout.activity_detail_menu6);
+        setContentView(R.layout.activity_detail_menu5);
         txtMenu = findViewById(R.id.txtMenu);
-        txtMenu.setText(getString(R.string.text_menu_home_6));
+        viewContent = findViewById(R.id.viewContent);
+        txtMenu.setText(getString(R.string.text_menu_home_5));
     }
 
     @Override

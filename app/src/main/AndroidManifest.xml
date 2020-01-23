@@ -34,6 +34,31 @@
             android:theme="@style/AppTheme.NoActionBar"/>
 
         <activity
+            android:name=".DetailMenu1Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".DetailMenu2Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".DetailMenu3Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".DetailMenu4Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
+            android:name=".DetailMenu5Activity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity
             android:name=".DetailMenu6Activity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>

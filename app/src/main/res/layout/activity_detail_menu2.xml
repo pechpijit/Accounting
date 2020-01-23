@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="6dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bar_background" />
+
+                <TextView
+                    android:id="@+id/txtMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="16sp"
+                    android:paddingTop="35dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:transitionName="txtMenu" />
+
+                <com.jetradarmobile.snowfall.SnowfallView
+                    android:id="@+id/snowView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:transitionName="snowView"
+                    app:snowflakeAlphaMax="255"
+                    app:snowflakeAlphaMin="150"
+                    app:snowflakeAngleMax="15"
+                    app:snowflakeImage="@drawable/snowflake"
+                    app:snowflakeSizeMax="20dp"
+                    app:snowflakeSizeMin="5dp"
+                    app:snowflakeSpeedMax="4"
+                    app:snowflakeSpeedMin="1"
+                    app:snowflakesAlreadyFalling="false"
+                    app:snowflakesFadingEnabled="true"
+                    app:snowflakesNum="80" />
+
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="vertical">
+
+                <com.github.chrisbanes.photoview.PhotoView
+                    android:id="@+id/viewPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="550dp"/>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+</RelativeLayout>

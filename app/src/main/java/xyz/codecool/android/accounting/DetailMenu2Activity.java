@@ -5,28 +5,31 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.github.chrisbanes.photoview.PhotoView;
 
 import xyz.codecool.android.accounting.helper.BaseActivity;
 
-public class DetailMenu6Activity extends BaseActivity {
+public class DetailMenu2Activity extends BaseActivity {
 
-    LinearLayout viewContent;
     TextView txtMenu;
+    PhotoView photoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStatusBarGradiant(this);
-        setContentView(R.layout.activity_detail_menu6);
+        setContentView(R.layout.activity_detail_menu2);
+        photoView = findViewById(R.id.viewPhoto);
         txtMenu = findViewById(R.id.txtMenu);
-        txtMenu.setText(getString(R.string.text_menu_home_6));
+        txtMenu.setText(getString(R.string.text_menu_home_2));
+
+        photoView.setImageResource(R.drawable.menu2);
     }
 
     @Override
     public void onBackPressed() {
-        invisibleView(viewContent);
         super.onBackPressed();
     }
 

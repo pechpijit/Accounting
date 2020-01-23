@@ -2,14 +2,9 @@ package xyz.codecool.android.accounting;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
-import android.transition.Explode;
-import android.transition.Slide;
-import android.transition.Transition;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.TextView;
 
 import xyz.codecool.android.accounting.helper.BaseActivity;

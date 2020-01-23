@@ -19,17 +19,13 @@ import android.widget.TextView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import xyz.codecool.android.accounting.helper.BaseActivity;
 
 public class SplashScreenActivity extends BaseActivity {
 
-    @BindView(R.id.imgLogo)
+
     ImageView imgLogo;
-    @BindView(R.id.txtTitle)
     TextView txtTitle;
-    @BindView(R.id.progress)
     ProgressBar progress;
     Animation animation;
 
@@ -40,7 +36,10 @@ public class SplashScreenActivity extends BaseActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         setContentView(R.layout.activity_splash);
-        ButterKnife.bind(this);
+
+        imgLogo = findViewById(R.id.imgLogo);
+        txtTitle = findViewById(R.id.txtTitle);
+        progress = findViewById(R.id.progress);
 
         invisibleView(imgLogo,txtTitle,progress);
 

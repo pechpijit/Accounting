@@ -4,27 +4,18 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.transition.Explode;
-import android.transition.Fade;
-import android.transition.Slide;
-import android.transition.Transition;
 import android.util.Pair;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
-import androidx.core.app.ActivityOptionsCompat;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -124,33 +115,36 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Intent intent = null;
         switch (v.getId()) {
             case R.id.btnMenu1:
-                intentDetail(null,1, getString(R.string.text_menu_home_1), btnMenu1, txtMenu1);
+                intent = new Intent(this, DetailMenu1Activity.class);
+                intentDetail(intent, btnMenu1, txtMenu1);
                 break;
             case R.id.btnMenu2:
-                intentDetail(null,2, getString(R.string.text_menu_home_2), btnMenu2, txtMenu2);
+                intent = new Intent(this, DetailMenu2Activity.class);
+                intentDetail(intent, btnMenu2, txtMenu2);
                 break;
             case R.id.btnMenu3:
-                intentDetail(null,3, getString(R.string.text_menu_home_3), btnMenu3, txtMenu3);
+                intent = new Intent(this, DetailMenu3Activity.class);
+                intentDetail(intent, btnMenu3, txtMenu3);
                 break;
             case R.id.btnMenu4:
-                intentDetail(null,4, getString(R.string.text_menu_home_4), btnMenu4, txtMenu4);
+                intent = new Intent(this, DetailMenu4Activity.class);
+                intentDetail(intent, btnMenu4, txtMenu4);
                 break;
             case R.id.btnMenu5:
-                intentDetail(null,5, getString(R.string.text_menu_home_5), btnMenu5, txtMenu5);
+                intent = new Intent(this, DetailMenu5Activity.class);
+                intentDetail(intent, btnMenu5, txtMenu5);
                 break;
             case R.id.btnMenu6:
-                Intent intent = new Intent(this, DetailMenu6Activity.class);
-                intentDetail(intent,6, getString(R.string.text_menu_home_6), btnMenu6, txtMenu6);
+                intent = new Intent(this, DetailMenu6Activity.class);
+                intentDetail(intent, btnMenu6, txtMenu6);
                 break;
         }
     }
 
-    private void intentDetail(Intent intent ,int page, String title, FrameLayout view, TextView txtMenu) {
-        intent.putExtra("page", page);
-        intent.putExtra("title", title);
-
+    private void intentDetail(Intent intent , FrameLayout view, TextView txtMenu) {
         Pair[] pairs = new Pair[2];
         pairs[0] = new Pair<View, String>(view, "btnMenu");
         pairs[1] = new Pair<View, String>(txtMenu, "txtMenu");

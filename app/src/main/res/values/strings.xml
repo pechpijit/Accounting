@@ -1,12 +1,11 @@
 <resources>
-    <string name="app_name">5 สูตรบัญชีควรจำ</string>
+    <string name="app_name">สูตรบัญชีควรจำ</string>
     <string name="action_settings">Settings</string>
 
-    <string name="text_menu_home_1">1. สูตรหาสินทรัพย์</string>
-    <string name="text_menu_home_2">2. สูตรหากำไรสุทธิ์</string>
-    <string name="text_menu_home_3">3. สูตรหากำไรสะสมปลายปี</string>
-    <string name="text_menu_home_4">4. สูตรหาส่วนทุนของเจ้าของกิจการ</string>
-    <string name="text_menu_home_5">5. สูตรค่าเสื่อมราคา</string>
-    <string name="text_menu_home_6">คำศัพท์บัญชียอดฮิต</string>
-    <string name="title_activity_detail_menu1">DetailMenu1Activity</string>
+    <string name="text_menu_home_1">1. สูตรซื้อสุทธิ</string>
+    <string name="text_menu_home_2">2. สูตรคำนวณวัสดุสิ้นเปลืองใช้ไป</string>
+    <string name="text_menu_home_3">3. สูตรสินทรัพย์</string>
+    <string name="text_menu_home_4">4. สูตรภาษีมูลค่าเพิ่ม</string>
+    <string name="text_menu_home_5">5. หมวดบัญชี</string>
+    <string name="text_menu_home_6">6. คำศัพท์บัญชียอดฮิต</string>
 </resources>
